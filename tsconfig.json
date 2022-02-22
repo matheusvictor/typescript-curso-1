@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/js", // destino dos arquivos gerados em TS para a pasta dist, em JS
+        "target": "ES6" // converter TS para JS na versão ECMAScript 6
+    },
+    "include": ["app/**/*"]   
+    // todos os arquivos .ts que estiverem dentro da pasta app, serão considerados 
+    // para conversão em JS e serão "jogados" na pasta dist/js
+}
