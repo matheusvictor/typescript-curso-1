@@ -12,11 +12,12 @@ export class NegociacaoController {
     }
 
     adiciona() {
-        const negociacao = new Negociacao(
-            this.inputData.value,
-            this.inputQuantidade.value,
-            this.inputValor.value
-        );
+        // Como os valores recebidos do form vêem como String:        
+        const data = new Date(this.inputData.value.replace('-', ',')); // conversão de data        
+        const quantidade = parseInt(this.inputQuantidade.value); // conversão de quantidade
+        const valor = parseFloat(this.inputValor.value); // conversao de valor
+
+        const negociacao = new Negociacao(data, quantidade, valor);
 
         console.log(negociacao);
     }
