@@ -7,10 +7,8 @@ export class Negociacoes {
         this.negociacoes.push(novaNegociacao);
     }
 
-    listaNegociacoes(): Array<Negociacao> {
-        return [...this.negociacoes];
-        // retorna uma "cópia" da lista, preservando a original,
-        // pois a ref da lista original em memória é diferente da ref. de sua cópia
+    listaNegociacoes(): ReadonlyArray<Negociacao> {
+        return this.negociacoes;
     }
 
 }
