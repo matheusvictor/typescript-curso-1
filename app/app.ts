@@ -1,5 +1,12 @@
-import{Negociacao} from './models/negociacao.js'; // importa o módulo Negociacao
+import { NegociacaoController } from './controllers/negociacao-controller.js';
 
-const negociacao = new Negociacao(new Date(), 10, 100); // cria instância de Negociacao
+const controller = new NegociacaoController();
+const form = document.querySelector('.form'); // pegando o form a partir da ref DOM da nossa página
 
-console.log(negociacao.volumeNegociacao);
+// quando o evento de submit for acionado, será disparado o evento adiciona() do controller
+form.addEventListener('submit', event => {
+    event.preventDefault(); // impede comportamento de autorefresh durante o evento de submit
+    controller.adiciona();
+});
+
+
