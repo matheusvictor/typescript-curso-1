@@ -6,13 +6,20 @@ export class Negociacao {
     As propriedades que não são recebidas no constutor, podem ser declaradas fora dele */
 
     constructor(
-        public readonly data: Date,
+        private _data: Date,
         public readonly quantidade: number,
         public readonly valor: number
     ) { }
 
     get volumeNegociacao(): number {
         return this.quantidade * this.valor;
+    }
+
+    get data(): Date {
+        const data = new Date(this._data.getTime());
+        /* Cria uma cópia do valor de _data em uma nova referência.
+        Assim, `data` é uma "cópia" do valor de _data*/
+        return data; // retorna a "cópia" de _data sem afetar o valor guardado no modelo de Negociacao
     }
 
 }
